@@ -1,0 +1,563 @@
+/* Sport Challenge
+    1. HTML Reset
+    2. Nav Menu
+     2.1. Login Button
+    3. Social Sidebar
+    4. Contenido Central
+     4.1 Modal
+
+*/
+
+@font-face {
+    font-family: AlpacaScarlett;
+    src: url(../assets/fonts/Alpaca-Scarlett-Demo.otf) format("opentype");
+}
+
+@font-face {
+    font-family: QarantaBold;
+    src: url(../assets/fonts/Qaranta-Bold.otf) format("opentype");
+}
+
+:root {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: QarantaBold, sans-serif;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1;
+    height: 100%;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+/* 1. HTML Reset */
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+}
+
+
+/* change colours to suit your needs */
+
+ins {
+    background-color: #ff9;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* change colours to suit your needs */
+
+mark {
+    background-color: #ff9;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* change border colour to suit your needs */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #cccccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+.wrapper {
+    margin-right: auto;
+    /* 1 */
+    margin-left: 15%;
+    /* 1 */
+    max-width: 1440px;
+    /* 2 */
+    padding-right: 10px;
+    /* 3 */
+    padding-left: 10px;
+    /* 3 */
+}
+
+
+/* 2. Nav Menu */
+
+.primaryNav {
+    height: 5em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    >ul {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        text-transform: uppercase;
+        flex: 1;
+        &>li {
+            margin: 0;
+            position: relative;
+            text-align: center;
+            &:not(:last-child) {
+                border-right: 1.3px solid rgb(22, 232, 255);
+            }
+            &:hover {
+                background: #000;
+                a {
+                    color: #fff;
+                }
+                ul {
+                    display: block
+                }
+            }
+        }
+        & a {
+            display: block;
+            margin: 0;
+            padding: .5em;
+            text-decoration: none;
+            color: #000;
+        }
+    }
+    /*Propiedades del Nav en el juego*/
+    &--game {
+        background-color: #000;
+        >ul {
+            &>li:hover {
+                background: #131313;
+            }
+            & a {
+                color: #fff;
+            }
+            ul {
+                background-color: #131313;
+            }
+        }
+    }
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    font-size: 14px;
+    background-color: #fff;
+    font-family: AlpacaScarlett;
+    text-align: center;
+    color: #000;
+    li {
+        a {
+            color: #000 !important;
+        }
+         :hover {
+            background-color: rgba(19, 19, 19, 0.25);
+        }
+        &:not(:last-child) {
+            border-bottom: 1px solid #666;
+        }
+    }
+    &--game {
+        li {
+            a {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+
+/* Login Button */
+
+.button {
+    padding: 19px 12px;
+    color: white;
+    background-color: green;
+    border-radius: 0 .2em .2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover {
+        background-color: hsl(120, 100%, 30%);
+    }
+    &--profile {
+        background-color: steelblue;
+        border-radius: .2em 0 0 .2em;
+        margin-right: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        &:hover {
+            background-color: hsl(207, 80%, 60%);
+        }
+    }
+    &--wallet {
+        background-color: hsl(181, 100%, 41%);
+        border-radius: .2em 0 0 .2em;
+        margin-right: 5px;
+        padding: 5px 10px;
+        font-size: 14px;
+        &:hover {
+            cursor: pointer;
+            background-color: hsl(181, 86%, 50%);
+        }
+    }
+    img {
+        width: 30px;
+    }
+}
+
+
+/* 3. Social SideBar */
+
+.sidebar {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    .container {
+        height: 53%;
+        /*Bordes del contenedor*/
+        background: radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 30px, #fff 31px);
+        background-position: bottom left, bottom right, top right, top left;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        width: 75%
+    }
+}
+
+.logo img {
+    width: calc(80% - 10px);
+    margin: 10px auto;
+}
+
+.social img {
+    width: 115%;
+    position: relative;
+    left: -15px;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    margin: 1em 0;
+    & img {
+        width: calc(50% - 10px);
+        margin: auto;
+    }
+}
+
+
+/* 4. Contenido Central */
+
+.backg {
+    background: #000;
+}
+
+@mixin radial-gradient($from, $to) {
+    background: radial-gradient(40vw, circle cover, $from 0%, $to 30%);
+    background-color: $to;
+}
+
+.content {
+    overflow: hidden;
+    min-height: 93%;
+    z-index: -1;
+    &--game {
+        @include radial-gradient(#555A5F, #000);
+    }
+}
+
+.terminos {
+    font-family: AlpacaScarlett;
+    position: absolute;
+    font-size: 12px;
+    left: 50%;
+    bottom: 2em;
+    text-align: center;
+}
+
+.bannerTree {
+    height: 219px;
+    background: url(../img/general/bannerTree.jpg) no-repeat center right;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 2em;
+    h1 {
+        font-size: 32px;
+        letter-spacing: 2px;
+        color: lawngreen;
+        margin-bottom: 10px;
+    }
+    a,
+    a:visited {
+        color: #fff;
+    }
+    a:hover {
+        color: lawngreen;
+    }
+}
+
+
+/*Modal*/
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: hidden;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: rgb(66, 66, 66);
+    color: #a0a0a0;
+    position: relative;
+    margin: 8%;
+    margin-left: 15%;
+    letter-spacing: 1px;
+    line-height: 105%;
+    /* 15% from the top and centered */
+    padding: 3em;
+    border: 1px solid #888;
+    width: 70%;
+    border-radius: 10px;
+    /* Could be more or less, depending on screen size */
+    h1 {
+        color: #a4e800;
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    ol {
+        font-size: 14px;
+        li {
+            list-style-type: decimal;
+        }
+    }
+}
+
+#myBtn {
+    cursor: pointer;
+}
+
+
+/* The Close Button */
+
+.close {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    left: 93%;
+    top: 10px;
+    border-radius: 100%;
+    background: linear-gradient(to right top, rgba(14, 14, 14, 1) 65%, white 90%);
+    &:hover {
+        background: linear-gradient(to right top, #1d1a1a 65%, white 90%);
+        cursor: pointer;
+        .btnClose {
+            background-color: #444;
+        }
+        .btnClose::after,
+        .btnClose::before {
+            border-color: #ccc;
+        }
+    }
+}
+
+.btnClose {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    left: 5px;
+    top: 5px;
+    border-radius: 100%;
+    background: #333;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: 17px;
+        top: 16px;
+        left: 7px;
+        border: 4px solid #888;
+        border-radius: 10px;
+    }
+    &::after {
+        transform: rotate(45deg);
+    }
+    &::before {
+        transform: rotate(-45deg);
+    }
+}
