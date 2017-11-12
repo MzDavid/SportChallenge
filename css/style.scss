@@ -1,4 +1,5 @@
 /* Sport Challenge
+    0. Variables
     1. HTML Reset
     2. Nav Menu
      2.1. Login Button
@@ -8,18 +9,21 @@
 
 */
 
+$break-small: 320px;
+$break-large: 1441px;
 @font-face {
     font-family: AlpacaScarlett;
-    src: url(../assets/fonts/Alpaca-Scarlett-Demo.otf) format("opentype");
+    src: url(../fonts/Alpaca-Scarlett-Demo.otf) format("opentype");
 }
 
 @font-face {
     font-family: QarantaBold;
-    src: url(../assets/fonts/Qaranta-Bold.otf) format("opentype");
+    src: url(../fonts/Qaranta-Bold.otf) format("opentype");
 }
 
 :root {
     box-sizing: border-box;
+    background-color: #000;
 }
 
 html,
@@ -209,17 +213,25 @@ select {
     vertical-align: middle;
 }
 
+.globalcontainer {
+    margin: auto;
+    max-width: 1440px;
+}
+
 .wrapper {
     margin-right: auto;
     /* 1 */
     margin-left: 15%;
     /* 1 */
-    max-width: 1440px;
+    // max-width: 1440px;
     /* 2 */
     padding-right: 10px;
     /* 3 */
     padding-left: 10px;
     /* 3 */
+    @media screen and (min-width: $break-large) {
+        margin-left: 25%;
+    }
 }
 
 
@@ -231,6 +243,7 @@ select {
     align-items: center;
     align-content: center;
     justify-content: center;
+    background-color: #fff;
     >ul {
         display: flex;
         position: relative;
@@ -313,7 +326,7 @@ select {
 /* Login Button */
 
 .button {
-    padding: 19px 12px;
+    padding: 14px;
     color: white;
     background-color: green;
     border-radius: 0 .2em .2em 0;
@@ -327,7 +340,7 @@ select {
         background-color: steelblue;
         border-radius: .2em 0 0 .2em;
         margin-right: 5px;
-        padding: 5px 10px;
+        padding: 5px;
         font-size: 14px;
         &:hover {
             background-color: hsl(207, 80%, 60%);
@@ -337,7 +350,7 @@ select {
         background-color: hsl(181, 100%, 41%);
         border-radius: .2em 0 0 .2em;
         margin-right: 5px;
-        padding: 5px 10px;
+        padding: 5px;
         font-size: 14px;
         &:hover {
             cursor: pointer;
@@ -345,7 +358,7 @@ select {
         }
     }
     img {
-        width: 30px;
+        width: 20px;
     }
 }
 
@@ -408,22 +421,38 @@ select {
     background-color: $to;
 }
 
+.score {
+    position: absolute;
+    z-index: -10;
+}
+
 .content {
-    overflow: hidden;
-    min-height: 93%;
+    min-height: 100%;
     z-index: -1;
+    position: relative;
     &--game {
+        top: -7%;
         @include radial-gradient(#555A5F, #000);
     }
 }
 
 .terminos {
     font-family: AlpacaScarlett;
-    position: absolute;
     font-size: 12px;
-    left: 50%;
-    bottom: 2em;
+    display: flex;
     text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    color: #000;
+    background-color: #000;
+    height: 100px;
+    width: 85%;
+    &--game {
+        color: #fff;
+    }
 }
 
 .bannerTree {
@@ -433,7 +462,7 @@ select {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 2em;
+    padding-left: 2em;
     h1 {
         font-size: 32px;
         letter-spacing: 2px;
