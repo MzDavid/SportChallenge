@@ -5,7 +5,10 @@
      2.1. Login Button
     3. Social Sidebar
     4. Contenido Central
-     4.1 Modal
+     4.1. Formulario
+     4.2 Modal
+    5. Footer
+     Terminos
 
 */
 
@@ -427,36 +430,24 @@ select {
 }
 
 .content {
-    min-height: 100%;
-    z-index: -1;
-    position: relative;
+    height: 100%;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    background-color: #fff;
+    align-items: center;
     &--game {
         top: -7%;
         @include radial-gradient(#555A5F, #000);
     }
-}
-
-.terminos {
-    font-family: AlpacaScarlett;
-    font-size: 12px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    color: #000;
-    background-color: #000;
-    height: 100px;
-    width: 85%;
-    &--game {
-        color: #fff;
+    @media screen and (min-width: $break-large) {
+        margin-left: 25%;
     }
 }
 
 .bannerTree {
-    height: 219px;
+    height: 173px;
     background: url(../img/general/bannerTree.jpg) no-repeat center right;
     background-color: #000;
     display: flex;
@@ -475,6 +466,77 @@ select {
     }
     a:hover {
         color: lawngreen;
+    }
+}
+
+.mainContent {
+    background-color: #fff;
+    color: #000;
+    height: 100vh;
+    overflow-x: scroll;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle {
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: .5em 3em;
+    letter-spacing: 1px;
+    margin-top: 1em;
+    &--contact {
+        margin: 4em 0 2em;
+    }
+}
+
+
+/* Formulario */
+
+form {
+    text-align: center;
+}
+
+.contactForm {
+    width: 700px;
+    height: 300px;
+    border: 3px solid #000;
+    border-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    input {
+        flex: 1;
+        &:not(:last-of-type) {
+            margin-right: 10px;
+        }
+    }
+    textarea {
+        height: 190px;
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 14px;
+    font-family: QarantaBold;
+    padding: .5em;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    &::placeholder {
+        font-size: 14px;
+        color: #000;
     }
 }
 
@@ -588,5 +650,33 @@ select {
     }
     &::before {
         transform: rotate(-45deg);
+    }
+}
+
+
+/*Terminos y Condiciones */
+
+footer {
+    align-items: center;
+    background: url(../img/general/mancha.png) no-repeat center bottom;
+    background-size: contain;
+    bottom: 0;
+    color: #fff;
+    display: flex;
+    font-family: AlpacaScarlett;
+    font-size: 12px;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    padding-top: 1em;
+    text-align: center;
+    height: 130px;
+    width: 85%;
+    &--game {
+        color: #fff;
+    }
+    .terminos {
+        position: absolute;
+        top: 60%;
     }
 }
