@@ -246,6 +246,8 @@ select {
     align-content: center;
     justify-content: center;
     background-color: #fff;
+    position: fixed;
+    width: calc(85% - 20px);
     >ul {
         display: flex;
         position: relative;
@@ -454,6 +456,7 @@ select {
     justify-content: center;
     padding-left: 2em;
     width: calc(100% - 2em);
+    margin-top: 5em;
     h1 {
         font-size: 32px;
         letter-spacing: 2px;
@@ -667,12 +670,26 @@ footer {
     }
 }
 
-.terminos {
-    background-size: contain;
-    background: url(../img/general/mancha.png) no-repeat center bottom;
+.mancha {
     position: absolute;
-    font-family: AlpacaScarlett;
-    font-size: 12px;
     bottom: 0;
+}
+
+.prueba {
+    margin-top: 3em;
+    width: 288px;
+    height: 119px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.terminos {
+    font-family: AlpacaScarlett;
+    font-size: 14px;
+    letter-spacing: .5px;
     text-align: center;
+    margin-top: 2.5em;
+    position: absolute;
 }

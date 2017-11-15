@@ -224,6 +224,8 @@ select {
   -ms-flex-pack: center;
   justify-content: center;
   background-color: #fff;
+  position: fixed;
+  width: calc(85% - 20px);
   /*Propiedades del Nav en el juego*/ }
   .primaryNav > ul {
     display: -webkit-box;
@@ -435,7 +437,8 @@ select {
   -ms-flex-pack: center;
   justify-content: center;
   padding-left: 2em;
-  width: calc(100% - 2em); }
+  width: calc(100% - 2em);
+  margin-top: 5em; }
   .bannerTree h1 {
     font-size: 32px;
     letter-spacing: 2px;
@@ -651,11 +654,32 @@ footer {
   footer--game {
     color: #fff; }
 
-.terminos {
-  background-size: contain;
-  background: url(../img/general/mancha.png) no-repeat center bottom;
+.mancha {
   position: absolute;
+  bottom: 0; }
+
+.prueba {
+  margin-top: 3em;
+  width: 288px;
+  height: 119px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.terminos {
   font-family: AlpacaScarlett;
-  font-size: 12px;
-  bottom: 0;
-  text-align: center; }
+  font-size: 14px;
+  letter-spacing: .5px;
+  text-align: center;
+  margin-top: 2.5em;
+  position: absolute; }
