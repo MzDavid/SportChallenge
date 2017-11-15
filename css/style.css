@@ -31,7 +31,6 @@ body {
   font-size: 16px;
   line-height: 1;
   height: 100%;
-  overflow: hidden;
   color: #fff; }
 
 /* 1. HTML Reset */
@@ -391,7 +390,6 @@ select {
   z-index: -10; }
 
 .content {
-  height: 100%;
   margin-left: 15%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -402,12 +400,13 @@ select {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: scroll;
+  min-height: 100%;
   background-color: #fff;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  min-height: 90vh; }
   .content--game {
     top: -7%;
     background: -webkit-radial-gradient(40vw, circle cover, #555A5F 0%, #000 30%);
@@ -435,7 +434,8 @@ select {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding-left: 2em; }
+  padding-left: 2em;
+  width: calc(100% - 2em); }
   .bannerTree h1 {
     font-size: 32px;
     letter-spacing: 2px;
@@ -641,32 +641,21 @@ footer {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  background: url(../img/general/mancha.png) no-repeat center bottom;
-  background-size: contain;
-  bottom: 0;
-  color: #fff;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  font-family: AlpacaScarlett;
-  font-size: 12px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: absolute;
-  padding-top: 1em;
   text-align: center;
   height: 130px;
   width: 85%; }
   footer--game {
     color: #fff; }
-  footer .terminos {
-    position: absolute;
-    top: 60%; }
+
+.terminos {
+  background-size: contain;
+  background: url(../img/general/mancha.png) no-repeat center bottom;
+  position: absolute;
+  font-family: AlpacaScarlett;
+  font-size: 12px;
+  bottom: 0;
+  text-align: center; }
