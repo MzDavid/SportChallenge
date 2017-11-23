@@ -189,7 +189,8 @@ select {
 
 .globalcontainer {
   margin: auto;
-  max-width: 1440px; }
+  max-width: 1440px;
+  height: 100%; }
 
 .wrapper {
   margin-right: auto;
@@ -355,7 +356,7 @@ select {
   justify-content: center;
   background-color: #000; }
   .sidebar .container {
-    height: 53%;
+    height: 400px;
     /*Bordes del contenedor*/
     background: -webkit-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), -webkit-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), -webkit-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), -webkit-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 30px, #fff 31px);
     background: -o-radial-gradient(0 100%, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), -o-radial-gradient(100% 100%, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), -o-radial-gradient(100% 0, circle, rgba(204, 0, 0, 0) 30px, #fff 31px), -o-radial-gradient(0 0, circle, rgba(204, 0, 0, 0) 30px, #fff 31px);
@@ -363,7 +364,7 @@ select {
     background-position: bottom left, bottom right, top right, top left;
     background-size: 50% 50%;
     background-repeat: no-repeat;
-    width: 75%; }
+    width: 130px; }
 
 .logo img {
   width: calc(80% - 10px);
@@ -407,8 +408,7 @@ select {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
-  min-height: 90vh; }
+  align-items: center; }
   .content--game {
     top: -7%;
     background: -webkit-radial-gradient(40vw, circle cover, #555A5F 0%, #000 30%);
@@ -418,6 +418,10 @@ select {
   @media screen and (min-width: 1441px) {
     .content {
       margin-left: 25%; } }
+  .content p {
+    text-align: center;
+    color: #888;
+    margin-bottom: 1em; }
 
 .bannerTree {
   height: 173px;
@@ -480,6 +484,111 @@ select {
   margin-top: 1em; }
   .tittle--contact {
     margin: 4em 0 2em; }
+  .tittle--recover {
+    margin: 4em 0 1em;
+    padding: 1em; }
+  .tittle--register {
+    margin: 4em 0 2em;
+    width: 283.52px;
+    text-align: center;
+    padding: .5em 1em; }
+
+.recover {
+  width: 285px;
+  height: 45px;
+  padding-right: 4em;
+  position: relative; }
+  .recover::-webkit-input-placeholder {
+    font-size: 19px;
+    color: rgba(153, 153, 153, 0.6); }
+  .recover:-ms-input-placeholder {
+    font-size: 19px;
+    color: rgba(153, 153, 153, 0.6); }
+  .recover::placeholder {
+    font-size: 19px;
+    color: rgba(153, 153, 153, 0.6); }
+  .recover + img {
+    width: 10%;
+    position: absolute;
+    padding-left: 5px;
+    top: 15px;
+    right: 10px;
+    border-left: 2px solid #000; }
+
+.containerRegister {
+  width: 550px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.inputContainer {
+  position: relative; }
+
+.register {
+  padding-right: 3em; }
+  .register + img {
+    width: 10%;
+    position: absolute;
+    padding-left: 5px;
+    top: 8px;
+    right: 10px;
+    border-left: 2px solid #000; }
+  .register::-webkit-input-placeholder {
+    font-size: 14px;
+    color: rgba(153, 153, 153, 0.6); }
+  .register:-ms-input-placeholder {
+    font-size: 14px;
+    color: rgba(153, 153, 153, 0.6); }
+  .register::placeholder {
+    font-size: 14px;
+    color: rgba(153, 153, 153, 0.6); }
+
+.inputContainer ~ .tittle {
+  padding: 1em 7em;
+  margin-bottom: 1em; }
+
+.faqContainer {
+  margin-top: 5em;
+  width: 600px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 1em;
+  overflow-y: scroll; }
+  .faqContainer h2 {
+    text-transform: uppercase;
+    color: lawngreen; }
+  .faqContainer p {
+    text-align: left;
+    margin-left: 2.5em;
+    margin-top: 1em;
+    color: #fff;
+    line-height: 20px; }
+    .faqContainer p a,
+    .faqContainer p a:visited {
+      color: greenyellow; }
+  .faqContainer::-webkit-scrollbar {
+    width: 20px; }
+  .faqContainer::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left top, right top, from(#9dd53a), color-stop(83%, #a1d54f), color-stop(83%, #a1d54f), color-stop(83%, #a1d54f), to(#346600));
+    background: -webkit-linear-gradient(left, #9dd53a 0%, #a1d54f 83%, #a1d54f 83%, #a1d54f 83%, #346600 100%);
+    background: linear-gradient(to right, #9dd53a 0%, #a1d54f 83%, #a1d54f 83%, #a1d54f 83%, #346600 100%);
+    background-position: center;
+    border: 1px solid #000;
+    border-radius: 5px; }
+  .faqContainer::-webkit-scrollbar-track {
+    background-color: #666666;
+    border: 7px solid #000; }
+  .faqContainer::-webkit-scrollbar-button {
+    background-color: yellow; }
 
 /* Formulario */
 form {
@@ -658,7 +767,7 @@ footer {
   position: absolute;
   bottom: 0; }
 
-.prueba {
+.containerTerm {
   margin-top: 3em;
   width: 288px;
   height: 119px;
@@ -670,11 +779,14 @@ footer {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center; }
+  .containerTerm--recover {
+    margin-top: 4em; }
 
 .terminos {
   font-family: AlpacaScarlett;
