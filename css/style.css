@@ -7,6 +7,9 @@
     4. Contenido Central
      4.1. Formulario
      4.2 Modal
+     4.3 FAQ Container
+     4.4 Panel profile
+     4.5 Timeline
     5. Footer
      Terminos
 
@@ -202,9 +205,6 @@ select {
   /* 3 */
   padding-left: 10px;
   /* 3 */ }
-  @media screen and (min-width: 1441px) {
-    .wrapper {
-      margin-left: 25%; } }
 
 /* 2. Nav Menu */
 .primaryNav {
@@ -226,6 +226,7 @@ select {
   justify-content: center;
   background-color: #fff;
   position: fixed;
+  z-index: 200;
   width: calc(85% - 20px);
   /*Propiedades del Nav en el juego*/ }
   .primaryNav > ul {
@@ -311,7 +312,7 @@ select {
   .button:hover {
     background-color: #009900; }
   .button--profile {
-    background-color: steelblue;
+    background-color: #005583;
     border-radius: .2em 0 0 .2em;
     margin-right: 5px;
     padding: 5px;
@@ -454,26 +455,6 @@ select {
   .bannerTree a:hover {
     color: lawngreen; }
 
-.mainContent {
-  background-color: #fff;
-  color: #000;
-  height: 100vh;
-  overflow-x: scroll;
-  padding: 0 10px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
 .tittle {
   background-color: #000;
   color: #fff;
@@ -555,8 +536,10 @@ select {
   padding: 1em 7em;
   margin-bottom: 1em; }
 
+/* FAQ Container*/
 .faqContainer {
   margin-top: 5em;
+  margin-bottom: 23vh;
   width: 600px;
   height: 100px;
   background-color: #000;
@@ -590,13 +573,377 @@ select {
   .faqContainer::-webkit-scrollbar-button {
     background-color: yellow; }
 
+/*Panel Profile*/
+.panelContent {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.profileContent {
+  width: 70%;
+  margin-left: 1em;
+  margin-top: 3em; }
+
+.buttonContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 1em; }
+
+.buttonProfile {
+  background-color: #000;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 1em;
+  width: 300px;
+  float: left;
+  font-size: 13px; }
+  .buttonProfile--d, .buttonProfile--r {
+    text-transform: capitalize;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 150px;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .buttonProfile--d {
+    background-color: #20c920;
+    text-align: center; }
+  .buttonProfile--r {
+    background-color: #da1313;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .buttonProfile--i {
+    position: relative; }
+    .buttonProfile--i img {
+      position: absolute;
+      width: 15%;
+      z-index: 10;
+      left: -15px;
+      top: -7px; }
+    .buttonProfile--i h3 {
+      padding-left: 3em; }
+
+.cardProfile ~ .buttonContainer .buttonProfile--i {
+  width: 100%; }
+  .cardProfile ~ .buttonContainer .buttonProfile--i img {
+    width: 6.5%; }
+  .cardProfile ~ .buttonContainer .buttonProfile--i h3 {
+    width: 93%; }
+
+.cardProfile {
+  background-color: #dadada;
+  padding: 1em;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2em; }
+  .cardProfile img {
+    width: 35%;
+    height: 100%; }
+
+.editField {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .editField .buttonProfile {
+    text-align: center;
+    width: 200px; }
+
+.infoProfile {
+  padding: .7em;
+  padding-left: 2.5em;
+  background: #b1afb0;
+  border-radius: 10px;
+  width: 85%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative; }
+  .infoProfile label {
+    color: #000; }
+  .infoProfile:after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background: url(../img/general/icono-08.png);
+    background-size: 100% 100%;
+    left: 0;
+    top: 0; }
+
+/*Timeline*/
+.timeline {
+  background: #dadada;
+  border-radius: 10px;
+  padding: 1em; }
+
+.timeline > .row:last-of-type > .dateContainer:after {
+  display: none; }
+
+.row {
+  width: 96%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2em; }
+
+.dateContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative; }
+  .dateContainer:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 90px;
+    bottom: -45px;
+    background-color: #fff;
+    border: 3px solid #777;
+    border-top: 0;
+    border-bottom: 0; }
+  .dateContainer img {
+    width: 80px;
+    height: 80px;
+    z-index: 10; }
+
+.tipoMovimiento {
+  background-color: #fff;
+  color: #005583;
+  border-left: 5px solid #005583;
+  padding: .5em 0 .5em .5em; }
+
+.movimiento {
+  margin-bottom: 5px; }
+
+.userInfo {
+  padding: .5em;
+  background-color: #b1afb0;
+  border-left: 5px solid #005583;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.userInfoA,
+.userInfoB {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .userInfoA img,
+  .userInfoB img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; }
+
+.timelineButton {
+  background-color: #b1afb0;
+  border-radius: 25px;
+  text-align: center;
+  border: 4px solid #fff;
+  width: 85%;
+  height: 50px;
+  color: #000;
+  font-size: 12px;
+  -webkit-box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  z-index: 100; }
+
+.timeContainer {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.infoContainer {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2; }
+
+/* Side Content Buscar*/
+.sideContent {
+  width: 30%;
+  margin-top: 3em;
+  padding-left: 1em;
+  padding-right: 1em; }
+  .sideContent__button {
+    background-color: #000;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 1em;
+    width: 220px;
+    float: left;
+    font-size: 13px;
+    color: #b1afb0;
+    margin-bottom: 1em; }
+
+.news {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center; }
+  .news ol {
+    line-height: 20px;
+    text-align: left;
+    letter-spacing: 1px;
+    margin-bottom: 1em; }
+
+ol li a {
+  color: #838082; }
+  ol li a:hover {
+    color: #005583; }
+
+.buscador {
+  position: relative; }
+  .buscador input {
+    width: 191px;
+    padding-right: 3em; }
+    .buscador input::-webkit-input-placeholder {
+      color: #bababa; }
+    .buscador input:-ms-input-placeholder {
+      color: #bababa; }
+    .buscador input::placeholder {
+      color: #bababa; }
+  .buscador img {
+    width: 10%;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    padding-left: 2px;
+    border-left: 2px solid #000; }
+
+.newsBox {
+  width: 220px;
+  text-transform: uppercase;
+  color: #005583;
+  font-size: 11px;
+  text-align: left;
+  margin-bottom: 3.5em;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .newsBox span {
+    float: left;
+    width: 70px;
+    height: 70px;
+    background-color: #555;
+    margin-bottom: 1em;
+    margin-right: 10px;
+    border-radius: 50%; }
+
+.newsName {
+  line-height: 15px;
+  margin-bottom: 5px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.newsDate {
+  color: #888;
+  text-align: left; }
+
 /* Formulario */
 form {
   text-align: center; }
 
 .contactForm {
   width: 700px;
-  height: 300px;
   border: 3px solid #000;
   border-radius: 20px;
   padding: 1em;
@@ -619,9 +966,9 @@ form {
     .contactForm input:not(:last-of-type) {
       margin-right: 10px; }
   .contactForm textarea {
-    height: 190px;
+    height: 25vh;
     width: 100%;
-    margin-bottom: 0; }
+    margin-bottom: 20px; }
 
 input[type="submit"] {
   cursor: pointer; }
@@ -779,7 +1126,7 @@ footer {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   bottom: 0;
   -webkit-box-pack: center;
   -webkit-justify-content: center;

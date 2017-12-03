@@ -7,6 +7,9 @@
     4. Contenido Central
      4.1. Formulario
      4.2 Modal
+     4.3 FAQ Container
+     4.4 Panel profile
+     4.5 Timeline
     5. Footer
      Terminos
 
@@ -232,9 +235,6 @@ select {
     /* 3 */
     padding-left: 10px;
     /* 3 */
-    @media screen and (min-width: $break-large) {
-        margin-left: 25%;
-    }
 }
 
 
@@ -248,6 +248,7 @@ select {
     justify-content: center;
     background-color: #fff;
     position: fixed;
+    z-index: 200;
     width: calc(85% - 20px);
     >ul {
         display: flex;
@@ -342,7 +343,7 @@ select {
         background-color: hsl(120, 100%, 30%);
     }
     &--profile {
-        background-color: steelblue;
+        background-color: #005583;
         border-radius: .2em 0 0 .2em;
         margin-right: 5px;
         padding: 5px;
@@ -477,17 +478,6 @@ select {
     }
 }
 
-.mainContent {
-    background-color: #fff;
-    color: #000;
-    height: 100vh;
-    overflow-x: scroll;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .tittle {
     background-color: #000;
     color: #fff;
@@ -562,8 +552,12 @@ select {
     margin-bottom: 1em;
 }
 
+
+/* FAQ Container*/
+
 .faqContainer {
     margin-top: 5em;
+    margin-bottom: 23vh;
     width: 600px;
     height: 100px;
     background-color: #000;
@@ -604,6 +598,315 @@ select {
 }
 
 
+/*Panel Profile*/
+
+.panelContent {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.profileContent {
+    width: 70%;
+    margin-left: 1em;
+    margin-top: 3em
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.buttonProfile {
+    background-color: #000;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 1em;
+    width: 300px;
+    float: left;
+    font-size: 13px;
+    &--d,
+    &--r {
+        text-transform: capitalize;
+        display: flex;
+        width: 150px;
+        align-items: center;
+    }
+    &--d {
+        background-color: rgb(32, 201, 32);
+        text-align: center;
+    }
+    &--r {
+        background-color: rgb(218, 19, 19);
+        justify-content: center;
+    }
+    &--i {
+        position: relative;
+        img {
+            position: absolute;
+            width: 15%;
+            z-index: 10;
+            left: -15px;
+            top: -7px;
+        }
+        h3 {
+            padding-left: 3em;
+        }
+    }
+}
+
+.cardProfile~.buttonContainer {
+    .buttonProfile--i {
+        width: 100%;
+        img {
+            width: 6.5%;
+        }
+        h3 {
+            width: 93%;
+        }
+    }
+}
+
+.cardProfile {
+    background-color: #dadada;
+    padding: 1em;
+    border-radius: 30px;
+    display: flex;
+    margin-bottom: 2em;
+    img {
+        width: 35%;
+        height: 100%;
+    }
+}
+
+.editField {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .buttonProfile {
+        text-align: center;
+        width: 200px;
+    }
+}
+
+.infoProfile {
+    padding: .7em;
+    padding-left: 2.5em;
+    background: #b1afb0;
+    border-radius: 10px;
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    label {
+        color: #000;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background: url(../img/general/icono-08.png);
+        background-size: 100% 100%;
+        left: 0;
+        top: 0;
+    }
+}
+
+
+/*Timeline*/
+
+.timeline {
+    background: #dadada;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.timeline>.row:last-of-type>.dateContainer:after {
+    display: none;
+}
+
+.row {
+    width: 96%;
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.dateContainer {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 5px;
+        height: 90px;
+        bottom: -45px;
+        background-color: #fff;
+        border: 3px solid #777;
+        border-top: 0;
+        border-bottom: 0;
+    }
+    img {
+        width: 80px;
+        height: 80px;
+        z-index: 10;
+    }
+}
+
+.tipoMovimiento {
+    background-color: #fff;
+    color: #005583;
+    border-left: 5px solid #005583;
+    padding: .5em 0 .5em .5em;
+}
+
+.movimiento {
+    margin-bottom: 5px;
+}
+
+.userInfo {
+    padding: .5em;
+    background-color: #b1afb0;
+    border-left: 5px solid #005583;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userInfoA,
+.userInfoB {
+    display: flex;
+    align-items: center;
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+}
+
+.timelineButton {
+    background-color: #b1afb0;
+    border-radius: 25px;
+    text-align: center;
+    border: 4px solid #fff;
+    width: 85%;
+    height: 50px;
+    color: #000;
+    font-size: 12px;
+    box-shadow: 0 0 5px #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.timeContainer {
+    flex: 1;
+}
+
+.infoContainer {
+    flex: 2;
+}
+
+
+/* Side Content Buscar*/
+
+.sideContent {
+    width: 30%;
+    margin-top: 3em;
+    padding-left: 1em;
+    padding-right: 1em;
+    &__button {
+        background-color: #000;
+        border-radius: 10px;
+        text-transform: uppercase;
+        padding: 1em;
+        width: 220px;
+        float: left;
+        font-size: 13px;
+        color: #b1afb0;
+        margin-bottom: 1em;
+    }
+}
+
+.news {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    ol {
+        line-height: 20px;
+        text-align: left;
+        letter-spacing: 1px;
+        margin-bottom: 1em;
+    }
+}
+
+ol li a {
+    color: #838082;
+    &:hover {
+        color: #005583;
+    }
+}
+
+.buscador {
+    position: relative;
+    input {
+        width: 191px;
+        padding-right: 3em;
+        &::placeholder {
+            color: #bababa;
+        }
+    }
+    img {
+        width: 10%;
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        padding-left: 2px;
+        border-left: 2px solid #000;
+    }
+}
+
+.newsBox {
+    width: 220px;
+    text-transform: uppercase;
+    color: #005583;
+    font-size: 11px;
+    text-align: left;
+    margin-bottom: 3.5em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    span {
+        float: left;
+        width: 70px;
+        height: 70px;
+        background-color: #555;
+        margin-bottom: 1em;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+}
+
+.newsName {
+    line-height: 15px;
+    margin-bottom: 5px;
+    flex: 1;
+}
+
+.newsDate {
+    color: #888;
+    text-align: left;
+}
+
+
 /* Formulario */
 
 form {
@@ -612,7 +915,6 @@ form {
 
 .contactForm {
     width: 700px;
-    height: 300px;
     border: 3px solid #000;
     border-radius: 20px;
     padding: 1em;
@@ -626,9 +928,9 @@ form {
         }
     }
     textarea {
-        height: 190px;
+        height: 25vh;
         width: 100%;
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
 }
 
@@ -788,7 +1090,7 @@ footer {
     height: 119px;
     display: flex;
     align-items: center;
-    position: absolute;
+    position: relative;
     bottom: 0;
     justify-content: center;
     &--recover {
