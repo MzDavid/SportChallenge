@@ -1,3 +1,13 @@
+$(document).ready(function () {
+    setTimeout(function () {
+        $('#loading').fadeOut();
+    }, 7000);
+});
+
+$('.triviaCheck').on('change', function () {
+    $('.triviaCheck').not(this).prop('checked', false);
+});
+
 // Get the modal
 var modal = document.getElementById('myModal');
 

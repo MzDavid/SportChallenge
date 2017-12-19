@@ -9,7 +9,9 @@
      4.2 Modal
      4.3 FAQ Container
      4.4 Panel profile
-     4.5 Timeline
+     4.5 Trivia Content
+     4.6 Timeline
+     4.7 Loader
     5. Footer
      Terminos
 
@@ -390,8 +392,10 @@ select {
   background: #000; }
 
 .score {
-  position: absolute;
-  top: 5em; }
+  position: absolute; }
+  .score .duende {
+    -webkit-clip-path: inset(20% 30% 0 30%);
+    clip-path: inset(20% 30% 0 30%); }
 
 .content {
   margin-left: 15%;
@@ -411,10 +415,6 @@ select {
   -ms-flex-align: center;
   align-items: center; }
   .content--game {
-    top: -7%;
-    background: -webkit-radial-gradient(40vw, circle cover, #555A5F 0%, #000 30%);
-    background: -o-radial-gradient(40vw, circle cover, #555A5F 0%, #000 30%);
-    background: radial-gradient(40vw, circle cover, #555A5F 0%, #000 30%);
     background-color: #000; }
   @media screen and (min-width: 1441px) {
     .content {
@@ -422,7 +422,7 @@ select {
   .content p {
     text-align: center;
     color: #888;
-    margin-bottom: 1em; }
+    margin-bottom: 1.5em; }
 
 .bannerTree {
   height: 173px;
@@ -585,6 +585,22 @@ select {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row; }
+  .panelContent--trivia {
+    background-color: #003e54;
+    padding: 2em 2em 0 2em;
+    width: calc(100% - 4em);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 5em; }
 
 .profileContent {
   width: 70%;
@@ -938,6 +954,141 @@ ol li a {
   color: #888;
   text-align: left; }
 
+/*Trivia Content*/
+.triviaScore {
+  width: 25%; }
+
+.triviaGame {
+  width: 45%; }
+
+.triviaPoll {
+  width: 30%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.triviaLevel {
+  background: #fff;
+  padding: 2em 0;
+  border-radius: 10px;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 265px;
+  margin-bottom: 2em;
+  border: 2px solid #000; }
+
+.triviaLevel form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .triviaLevel form p input {
+    margin: 0 0 0 5px; }
+  .triviaLevel form p label {
+    color: #003e54;
+    position: relative; }
+    .triviaLevel form p label span {
+      color: #888; }
+    .triviaLevel form p label img {
+      -webkit-filter: brightness(60%);
+      filter: brightness(60%);
+      width: 7%; }
+  .triviaLevel form p label:after {
+    content: '';
+    width: 18.55px;
+    height: 18.55px;
+    background: url(../img/general/coin.png);
+    background-size: cover;
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%);
+    position: absolute;
+    top: 0;
+    right: -20px; }
+
+.button--trivia {
+  padding: 14px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #000;
+  color: #003e54;
+  width: 160px;
+  border-radius: 10px;
+  font-family: QarantaBold;
+  font-size: 14px;
+  -webkit-transition: all ease-in-out .1s;
+  -o-transition: all ease-in-out .1s;
+  transition: all ease-in-out .1s; }
+  .button--trivia:hover {
+    color: #029ed1;
+    cursor: pointer; }
+
+.costoBits {
+  color: #777;
+  position: relative; }
+  .costoBits:after {
+    content: '';
+    width: 18.55px;
+    height: 18.55px;
+    background: url(../img/general/coin.png);
+    background-size: cover;
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%);
+    position: absolute;
+    top: 15px;
+    right: 15px; }
+  .costoBits:hover {
+    color: #fff; }
+    .costoBits:hover:after {
+      -webkit-filter: brightness(100%);
+      filter: brightness(100%); }
+
+.triviaText {
+  color: #999;
+  font-size: 17px;
+  margin: .3em 0; }
+
+.triviaTop {
+  background-color: #fff;
+  border-radius: 10px;
+  min-width: 90%;
+  border: 2px solid #000; }
+
 /* Formulario */
 form {
   text-align: center; }
@@ -993,6 +1144,114 @@ textarea {
   textarea::placeholder {
     font-size: 14px;
     color: #000; }
+
+.triviaPoll .button--trivia {
+  color: #888;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 1em;
+  padding: 1.5em; }
+
+.triviaTHead {
+  color: #888;
+  background-color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5em .5em 1em .5em;
+  border-radius: 10px;
+  height: 40px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.triviaTContent {
+  color: #666; }
+
+.triviaTRow {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: .5em .5em 1em .5em;
+  border-radius: 10px; }
+  .triviaTRow div {
+    background-color: #ccc;
+    text-align: center;
+    font-size: 12px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 35px; }
+
+.headMedal,
+.headUsername,
+.headEarn {
+  text-align: center; }
+
+.headMedal {
+  width: 25%; }
+
+.headUsername {
+  width: 45%; }
+
+.headEarn {
+  width: 30%; }
+
+.triviaMedal {
+  border-radius: 10px 0 0 10px;
+  margin-right: 5px;
+  width: 17%;
+  padding-left: 2em; }
+
+.triviaUsername {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+  margin-right: 5px; }
+
+.triviaEarn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  font-size: 10px;
+  width: 28%; }
+
+/*Loader*/
+#loading {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../img/gif/pantalla-carga.gif") no-repeat center center;
+  background-size: cover;
+  z-index: 500; }
+
+.remove {
+  display: none; }
 
 /*Modal*/
 /* The Modal (background) */

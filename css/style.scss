@@ -9,7 +9,9 @@
      4.2 Modal
      4.3 FAQ Container
      4.4 Panel profile
-     4.5 Timeline
+     4.5 Trivia Content
+     4.6 Timeline
+     4.7 Loader
     5. Footer
      Terminos
 
@@ -422,14 +424,11 @@ select {
     background: #000;
 }
 
-@mixin radial-gradient($from, $to) {
-    background: radial-gradient(40vw, circle cover, $from 0%, $to 30%);
-    background-color: $to;
-}
-
 .score {
     position: absolute;
-    top: 5em;
+    .duende {
+        clip-path: inset(20% 30% 0 30%);
+    }
 }
 
 .content {
@@ -440,8 +439,7 @@ select {
     background-color: #fff;
     align-items: center;
     &--game {
-        top: -7%;
-        @include radial-gradient(#555A5F, #000);
+        background-color: #000;
     }
     @media screen and (min-width: $break-large) {
         margin-left: 25%;
@@ -449,7 +447,7 @@ select {
     p {
         text-align: center;
         color: #888;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
     }
 }
 
@@ -604,6 +602,15 @@ select {
     width: 100%;
     display: flex;
     flex-direction: row;
+    &--trivia {
+        background-color: #003e54;
+        padding: 2em 2em 0 2em;
+        width: calc(100% - 4em);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 5em;
+    }
 }
 
 .profileContent {
@@ -907,6 +914,120 @@ ol li a {
 }
 
 
+/*Trivia Content*/
+
+.triviaScore {
+    width: 25%;
+}
+
+.triviaGame {
+    width: 45%;
+}
+
+.triviaPoll {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.triviaLevel {
+    background: #fff;
+    padding: 2em 0;
+    border-radius: 10px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 265px;
+    margin-bottom: 2em;
+    border: 2px solid #000;
+}
+
+.triviaLevel form {
+    display: flex;
+    flex-wrap: wrap;
+    p input {
+        margin: 0 0 0 5px;
+    }
+    p label {
+        color: #003e54;
+        position: relative;
+        span {
+            color: #888;
+        }
+        img {
+            filter: brightness(60%);
+            width: 7%;
+        }
+    }
+    p label:after {
+        content: '';
+        width: 18.55px;
+        height: 18.55px;
+        background: url(../img/general/coin.png);
+        background-size: cover;
+        filter: brightness(60%);
+        position: absolute;
+        top: 0;
+        right: -20px;
+    }
+}
+
+.button--trivia {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #003e54;
+    width: 160px;
+    border-radius: 10px;
+    font-family: QarantaBold;
+    font-size: 14px;
+    transition: all ease-in-out .1s;
+    &:hover {
+        color: #029ed1;
+        cursor: pointer;
+    }
+}
+
+.costoBits {
+    color: #777;
+    position: relative;
+    &:after {
+        content: '';
+        width: 18.55px;
+        height: 18.55px;
+        background: url(../img/general/coin.png);
+        background-size: cover;
+        filter: brightness(60%);
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    &:hover {
+        color: #fff;
+        &:after {
+            filter: brightness(100%)
+        }
+    }
+}
+
+.triviaText {
+    color: #999;
+    font-size: 17px;
+    margin: .3em 0;
+}
+
+.triviaTop {
+    background-color: #fff;
+    border-radius: 10px;
+    min-width: 90%;
+    border: 2px solid #000;
+}
+
+
 /* Formulario */
 
 form {
@@ -950,6 +1071,97 @@ textarea {
         font-size: 14px;
         color: #000;
     }
+}
+
+.triviaPoll .button--trivia {
+    color: #888;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+    padding: 1.5em;
+}
+
+.triviaTHead {
+    color: #888;
+    background-color: #000;
+    display: flex;
+    margin: .5em .5em 1em .5em;
+    border-radius: 10px;
+    height: 40px;
+    align-items: center;
+}
+
+.triviaTContent {
+    color: #666;
+}
+
+.triviaTRow {
+    display: flex;
+    margin: .5em .5em 1em .5em;
+    border-radius: 10px;
+    div {
+        background-color: #ccc;
+        text-align: center;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+    }
+}
+
+.headMedal,
+.headUsername,
+.headEarn {
+    text-align: center;
+}
+
+.headMedal {
+    width: 25%;
+}
+
+.headUsername {
+    width: 45%;
+}
+
+.headEarn {
+    width: 30%;
+}
+
+.triviaMedal {
+    border-radius: 10px 0 0 10px;
+    margin-right: 5px;
+    width: 17%;
+    padding-left: 2em;
+}
+
+.triviaUsername {
+    flex: 2;
+    margin-right: 5px;
+}
+
+.triviaEarn {
+    display: flex;
+    align-items: center;
+    border-radius: 0 10px 10px 0;
+    font-size: 10px;
+    width: 28%;
+}
+
+
+/*Loader*/
+
+#loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../img/gif/pantalla-carga.gif') no-repeat center center;
+    background-size: cover;
+    z-index: 500;
+}
+
+.remove {
+    display: none;
 }
 
 
