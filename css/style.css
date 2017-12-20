@@ -956,7 +956,20 @@ ol li a {
 
 /*Trivia Content*/
 .triviaScore {
-  width: 25%; }
+  width: 25%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .triviaGame {
   width: 45%; }
@@ -1057,6 +1070,14 @@ ol li a {
   .button--trivia:hover {
     color: #029ed1;
     cursor: pointer; }
+  .button--trivia__gris {
+    color: #aaa; }
+    .button--trivia__gris:hover {
+      color: #fff; }
+  .button--trivia__margin {
+    margin-bottom: 1.5em;
+    width: 200px;
+    font-size: 16px; }
 
 .costoBits {
   color: #777;
@@ -1241,6 +1262,117 @@ textarea {
   font-size: 10px;
   width: 28%; }
 
+#apostado::-webkit-input-placeholder {
+  color: #aaa;
+  font-size: 11px;
+  text-align: center; }
+
+#apostado:-ms-input-placeholder {
+  color: #aaa;
+  font-size: 11px;
+  text-align: center; }
+
+#apostado::placeholder {
+  color: #aaa;
+  font-size: 11px;
+  text-align: center; }
+
+.lastTicket {
+  max-width: 62%;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 1em;
+  margin-right: 20px; }
+  .lastTicket h2 {
+    color: lawngreen;
+    margin-bottom: 30px;
+    font-size: 22px; }
+  .lastTicket .flexTicket {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end; }
+    .lastTicket .flexTicket .flexChildTicket:nth-child(-n+2) {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 45%;
+      -ms-flex: 1 1 45%;
+      flex: 1 1 45%;
+      margin-right: 20px;
+      margin-bottom: 20px; }
+    .lastTicket .flexTicket .flexChildTicket:nth-child(n+3) {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      margin-right: 20px; }
+
+.flexChildTicket p {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 10px; }
+
+.bgChildTicket {
+  background-color: #444;
+  height: 50px;
+  border-radius: 5px; }
+  .bgChildTicket__verify {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    background-color: aqua;
+    height: 65px; }
+
+.nextTicket {
+  min-width: 30%;
+  background-color: #000;
+  border-radius: 10px;
+  padding: 1em; }
+  .nextTicket h2 {
+    color: lawngreen;
+    margin-bottom: 30px;
+    font-size: 22px; }
+  .nextTicket .flexTicket {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end; }
+    .nextTicket .flexTicket .flexChildTicket:nth-child(1) {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 100%;
+      -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+      margin-bottom: 20px; }
+    .nextTicket .flexTicket .flexChildTicket:nth-child(2) {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 1 45%;
+      -ms-flex: 0 1 45%;
+      flex: 0 1 45%;
+      margin-bottom: 20px; }
+
 /*Loader*/
 #loading {
   position: absolute;
@@ -1281,7 +1413,7 @@ textarea {
   color: #a0a0a0;
   position: relative;
   margin: 8%;
-  margin-left: 15%;
+  margin-left: auto;
   letter-spacing: 1px;
   line-height: 105%;
   /* 15% from the top and centered */
@@ -1298,6 +1430,15 @@ textarea {
     font-size: 14px; }
     .modal-content ol li {
       list-style-type: decimal; }
+  .modal-content__ticket {
+    border: 5px solid #fff;
+    margin-bottom: 0;
+    padding: 3em 1.5em 3em 1.5em;
+    width: 75%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
 
 #myBtn {
   cursor: pointer; }
@@ -1352,6 +1493,33 @@ textarea {
     -webkit-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     transform: rotate(-45deg); }
+
+.bottomTicket {
+  position: relative;
+  background: #000;
+  width: 75%;
+  margin-left: auto;
+  margin-right: 8%;
+  padding: 1.5em;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .bottomTicket .fa-times-circle {
+    color: #aaa;
+    cursor: pointer; }
+    .bottomTicket .fa-times-circle:hover {
+      color: #fff; }
 
 /*Terminos y Condiciones */
 footer {

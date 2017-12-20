@@ -918,6 +918,9 @@ ol li a {
 
 .triviaScore {
     width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .triviaGame {
@@ -989,6 +992,17 @@ ol li a {
     &:hover {
         color: #029ed1;
         cursor: pointer;
+    }
+    &__gris {
+        color: #aaa;
+        &:hover {
+            color: #fff;
+        }
+    }
+    &__margin {
+        margin-bottom: 1.5em;
+        width: 200px;
+        font-size: 16px;
     }
 }
 
@@ -1148,6 +1162,86 @@ textarea {
     width: 28%;
 }
 
+#apostado::placeholder {
+    color: #aaa;
+    font-size: 11px;
+    text-align: center;
+}
+
+.lastTicket {
+    max-width: 62%;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 1em;
+    margin-right: 20px;
+    h2 {
+        color: lawngreen;
+        margin-bottom: 30px;
+        font-size: 22px;
+    }
+    .flexTicket {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        .flexChildTicket:nth-child(-n+2) {
+            flex: 1 1 45%;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .flexChildTicket:nth-child(n+3) {
+            flex: 1;
+            margin-right: 20px;
+        }
+    }
+}
+
+.flexChildTicket {
+    p {
+        font-size: 13px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+}
+
+.bgChildTicket {
+    background-color: #444;
+    height: 50px;
+    border-radius: 5px;
+    &__verify {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: aqua;
+        height: 65px;
+    }
+}
+
+.nextTicket {
+    min-width: 30%;
+    background-color: #000;
+    border-radius: 10px;
+    padding: 1em;
+    h2 {
+        color: lawngreen;
+        margin-bottom: 30px;
+        font-size: 22px;
+    }
+    .flexTicket {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        .flexChildTicket:nth-child(1) {
+            flex: 1 1 100%;
+            margin-bottom: 20px;
+        }
+        .flexChildTicket:nth-child(2) {
+            flex: 0 1 45%;
+            margin-bottom: 20px;
+        }
+    }
+}
+
 
 /*Loader*/
 
@@ -1199,7 +1293,7 @@ textarea {
     color: #a0a0a0;
     position: relative;
     margin: 8%;
-    margin-left: 15%;
+    margin-left: auto;
     letter-spacing: 1px;
     line-height: 105%;
     /* 15% from the top and centered */
@@ -1218,6 +1312,13 @@ textarea {
         li {
             list-style-type: decimal;
         }
+    }
+    &__ticket {
+        border: 5px solid #fff;
+        margin-bottom: 0;
+        padding: 3em 1.5em 3em 1.5em;
+        width: 75%;
+        display: flex;
     }
 }
 
@@ -1274,6 +1375,27 @@ textarea {
     }
     &::before {
         transform: rotate(-45deg);
+    }
+}
+
+.bottomTicket {
+    position: relative;
+    background: #000;
+    width: 75%;
+    margin-left: auto;
+    margin-right: 8%;
+    padding: 1.5em;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .fa-times-circle {
+        color: #aaa;
+        cursor: pointer;
+        &:hover {
+            color: #fff;
+        }
     }
 }
 

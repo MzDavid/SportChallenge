@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fontawesome-all.css">
     <title>Sport Challenge</title>
 </head>
 
@@ -118,6 +119,20 @@
                         <button class="button--trivia">
                             RETIRARSE
                         </button>
+                    </div>
+
+                    <div class="triviaLevel">
+                        <input type="number" id="apostado" placeholder="Desde 100 hasta 100000">
+                        <p>Desde 100 hasta 100000</p>
+                        <div class="button--trivia button--trivia__gris">
+                            JUGAR
+                        </div>
+                    </div>
+                    <div class="button--trivia button--trivia__gris button--trivia__margin">
+                        TOMAR 250 BITS
+                    </div>
+                    <div id="btnTicket" class="button--trivia button--trivia__gris button--trivia__margin">
+                        VERIFICAR TICKET
                     </div>
                 </div>
                 <div class="triviaGame">
@@ -232,6 +247,65 @@
                             vea involucrada con estos hechos.</li>
                     </ol>
                 </p>
+            </div>
+        </div>
+
+        <div id="myTicket" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content  modal-content__ticket">
+                <div class="lastTicket">
+                    <h2>TICKET ANTERIOR</h2>
+                    <div class="flexTicket">
+                        <div class="flexChildTicket">
+                            <p>Hash</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                        <div class="flexChildTicket">
+                            <p>Número</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                        <div class="flexChildTicket">
+                            <p>Número servidor</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                        <div class="flexChildTicket">
+                            <p>Número cliente</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                        <div class="flexChildTicket">
+                            <p>Resultado</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                        <div class="flexChildTicket">
+                            <div class="bgChildTicket bgChildTicket__verify">
+                                VERIFICAR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nextTicket">
+                    <h2>TICKET SIGUIENTE</h2>
+                    <div class="flexTicket">
+                        <div class="flexChildTicket">
+                            <p>Hash</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                        <div class="flexChildTicket">
+                            <p>Número Cliente</p>
+                            <div class="bgChildTicket">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomTicket">
+                <i class="far fa-times-circle fa-2x ticketClose"></i>
             </div>
         </div>
     </div>
