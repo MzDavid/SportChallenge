@@ -265,9 +265,18 @@ select {
       text-decoration: none;
       color: #000; }
   .primaryNav--game {
-    background-color: #000; }
+    background-color: #000;
+    position: relative; }
     .primaryNav--game > ul > li:hover {
       background: #131313; }
+      .primaryNav--game > ul > li:hover::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 25px;
+        top: -19px;
+        background: url("../img/general/trebol.png") center top;
+        background-size: cover; }
     .primaryNav--game > ul a {
       color: #fff; }
     .primaryNav--game > ul ul {
@@ -404,16 +413,35 @@ select {
   top: 50%;
   right: 10%; }
   .scoreButton:nth-child(2) {
-    top: 68%; }
+    top: 68%;
+    cursor: pointer; }
+
+.scoreShow {
+  display: none; }
 
 .scoreFlecha {
   position: absolute;
   width: 5%;
   top: 75%;
-  right: 25%;
-  display: none; }
+  right: 25%; }
   .scoreFlecha:nth-child(5) {
     right: 5%; }
+
+.scoreGameButton {
+  position: absolute;
+  width: 10%;
+  top: 85%;
+  right: 25%; }
+  .scoreGameButton--adivina {
+    right: 2%; }
+
+.scoreWinner {
+  position: absolute;
+  width: 12%;
+  top: 30%;
+  right: 21%; }
+  .scoreWinner--faucet {
+    right: 70%; }
 
 .content {
   margin-left: 13%;

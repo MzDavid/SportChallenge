@@ -8,9 +8,8 @@ $(document).ready(function () {
 });
 
 $('#btnJugar').click(function () {
-    $('.scoreFlecha').fadeIn(500).css('display', 'block');
+    $('.scoreShow').fadeIn(500).css('display', 'block');
 });
-
 
 $('.triviaCheck').on('change', function () {
     $('.triviaCheck').not(this).prop('checked', false);

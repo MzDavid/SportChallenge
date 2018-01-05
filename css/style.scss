@@ -285,9 +285,19 @@ select {
   /*Propiedades del Nav en el juego*/
   &--game {
     background-color: #000;
+    position: relative;
     >ul {
       &>li:hover {
         background: #131313;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 25px;
+          top: -19px;
+          background: url("../img/general/trebol.png") center top;
+          background-size: cover;
+        }
       }
       & a {
         color: #fff;
@@ -438,7 +448,12 @@ select {
   right: 10%;
   &:nth-child(2) {
     top: 68%;
+    cursor: pointer;
   }
+}
+
+.scoreShow {
+  display: none;
 }
 
 .scoreFlecha {
@@ -446,9 +461,28 @@ select {
   width: 5%;
   top: 75%;
   right: 25%;
-  display: none;
   &:nth-child(5) {
     right: 5%;
+  }
+}
+
+.scoreGameButton {
+  position: absolute;
+  width: 10%;
+  top: 85%;
+  right: 25%;
+  &--adivina {
+    right: 2%;
+  }
+}
+
+.scoreWinner {
+  position: absolute;
+  width: 12%;
+  top: 30%;
+  right: 21%;
+  &--faucet {
+    right: 70%;
   }
 }
 
