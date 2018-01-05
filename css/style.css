@@ -200,7 +200,7 @@ select {
 .wrapper {
   margin-right: auto;
   /* 1 */
-  margin-left: 15%;
+  margin-left: 13%;
   /* 1 */
   /* 2 */
   padding-right: 10px;
@@ -229,7 +229,7 @@ select {
   background-color: #fff;
   position: fixed;
   z-index: 200;
-  width: calc(85% - 20px);
+  width: calc(87% - 20px);
   /*Propiedades del Nav en el juego*/ }
   .primaryNav > ul {
     display: -webkit-box;
@@ -336,7 +336,7 @@ select {
 /* 3. Social SideBar */
 .sidebar {
   height: 100%;
-  width: 15%;
+  width: 13%;
   position: fixed;
   z-index: 1;
   overflow: auto;
@@ -394,11 +394,29 @@ select {
 .score {
   position: absolute; }
   .score .duende {
+    position: relative;
     -webkit-clip-path: inset(20% 30% 0 30%);
     clip-path: inset(20% 30% 0 30%); }
 
+.scoreButton {
+  position: absolute;
+  width: 15%;
+  top: 50%;
+  right: 10%; }
+  .scoreButton:nth-child(2) {
+    top: 68%; }
+
+.scoreFlecha {
+  position: absolute;
+  width: 5%;
+  top: 75%;
+  right: 25%;
+  display: none; }
+  .scoreFlecha:nth-child(5) {
+    right: 5%; }
+
 .content {
-  margin-left: 15%;
+  margin-left: 13%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -541,7 +559,7 @@ select {
   margin-top: 5em;
   margin-bottom: 23vh;
   width: 600px;
-  height: 100px;
+  height: 400px;
   background-color: #000;
   border-radius: 10px;
   padding: 1em;
@@ -596,10 +614,10 @@ select {
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     margin-top: 5em; }
 
 .profileContent {
@@ -956,7 +974,7 @@ ol li a {
 
 /*Trivia Content*/
 .triviaScore {
-  width: 25%;
+  width: 23%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -972,10 +990,10 @@ ol li a {
   align-items: center; }
 
 .triviaGame {
-  width: 45%; }
+  width: 55%; }
 
 .triviaPoll {
-  width: 30%;
+  width: 20%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1008,9 +1026,11 @@ ol li a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 265px;
+  width: 100%;
   margin-bottom: 2em;
   border: 2px solid #000; }
+  .triviaLevel p {
+    font-size: 12px; }
 
 .triviaLevel form {
   display: -webkit-box;
@@ -1021,10 +1041,12 @@ ol li a {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   .triviaLevel form p input {
-    margin: 0 0 0 5px; }
+    margin: 0 0 0 5px;
+    font-size: 12px; }
   .triviaLevel form p label {
     color: #003e54;
-    position: relative; }
+    position: relative;
+    font-size: 11px; }
     .triviaLevel form p label span {
       color: #888; }
     .triviaLevel form p label img {
@@ -1033,8 +1055,8 @@ ol li a {
       width: 7%; }
   .triviaLevel form p label:after {
     content: '';
-    width: 18.55px;
-    height: 18.55px;
+    width: 15.55px;
+    height: 15.55px;
     background: url(../img/general/coin.png);
     background-size: cover;
     -webkit-filter: brightness(60%);
@@ -1044,7 +1066,7 @@ ol li a {
     right: -20px; }
 
 .button--trivia {
-  padding: 14px;
+  padding: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1060,10 +1082,10 @@ ol li a {
   align-items: center;
   background-color: #000;
   color: #003e54;
-  width: 160px;
+  width: 125px;
   border-radius: 10px;
   font-family: QarantaBold;
-  font-size: 14px;
+  font-size: 12px;
   -webkit-transition: all ease-in-out .1s;
   -o-transition: all ease-in-out .1s;
   transition: all ease-in-out .1s; }
@@ -1076,23 +1098,23 @@ ol li a {
       color: #fff; }
   .button--trivia__margin {
     margin-bottom: 1.5em;
-    width: 200px;
-    font-size: 16px; }
+    width: 150px;
+    font-size: 12px; }
 
 .costoBits {
   color: #777;
   position: relative; }
   .costoBits:after {
     content: '';
-    width: 18.55px;
-    height: 18.55px;
+    width: 14.55px;
+    height: 14.55px;
     background: url(../img/general/coin.png);
     background-size: cover;
     -webkit-filter: brightness(60%);
     filter: brightness(60%);
     position: absolute;
-    top: 15px;
-    right: 15px; }
+    top: 10px;
+    right: 10px; }
   .costoBits:hover {
     color: #fff; }
     .costoBits:hover:after {
@@ -1101,13 +1123,13 @@ ol li a {
 
 .triviaText {
   color: #999;
-  font-size: 17px;
+  font-size: 14px;
   margin: .3em 0; }
 
 .triviaTop {
   background-color: #fff;
   border-radius: 10px;
-  min-width: 90%;
+  min-width: 100%;
   border: 2px solid #000; }
 
 /* Formulario */
@@ -1207,7 +1229,7 @@ textarea {
   .triviaTRow div {
     background-color: #ccc;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1225,13 +1247,14 @@ textarea {
 .headMedal,
 .headUsername,
 .headEarn {
-  text-align: center; }
+  text-align: center;
+  font-size: 12px; }
 
 .headMedal {
   width: 25%; }
 
 .headUsername {
-  width: 45%; }
+  width: 40%; }
 
 .headEarn {
   width: 30%; }
@@ -1240,7 +1263,7 @@ textarea {
   border-radius: 10px 0 0 10px;
   margin-right: 5px;
   width: 17%;
-  padding-left: 2em; }
+  padding-left: 1.5em; }
 
 .triviaUsername {
   -webkit-box-flex: 2;
@@ -1260,22 +1283,22 @@ textarea {
   align-items: center;
   border-radius: 0 10px 10px 0;
   font-size: 10px;
-  width: 28%; }
+  width: 35%; }
 
-#apostado::-webkit-input-placeholder {
-  color: #aaa;
-  font-size: 11px;
-  text-align: center; }
-
-#apostado:-ms-input-placeholder {
-  color: #aaa;
-  font-size: 11px;
-  text-align: center; }
-
-#apostado::placeholder {
-  color: #aaa;
-  font-size: 11px;
-  text-align: center; }
+#apostado {
+  font-size: 12px; }
+  #apostado::-webkit-input-placeholder {
+    color: #aaa;
+    font-size: 10px;
+    text-align: center; }
+  #apostado:-ms-input-placeholder {
+    color: #aaa;
+    font-size: 10px;
+    text-align: center; }
+  #apostado::placeholder {
+    color: #aaa;
+    font-size: 10px;
+    text-align: center; }
 
 .lastTicket {
   max-width: 62%;
@@ -1298,12 +1321,15 @@ textarea {
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
-    align-items: flex-end; }
+    align-items: flex-end;
+    color: #ddd;
+    font-size: 13px; }
     .lastTicket .flexTicket .flexChildTicket:nth-child(-n+2) {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 45%;
       -ms-flex: 1 1 45%;
       flex: 1 1 45%;
+      max-width: 47%;
       margin-right: 20px;
       margin-bottom: 20px; }
     .lastTicket .flexTicket .flexChildTicket:nth-child(n+3) {
@@ -1320,8 +1346,10 @@ textarea {
 
 .bgChildTicket {
   background-color: #444;
-  height: 50px;
-  border-radius: 5px; }
+  height: 30px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  padding: 10px; }
   .bgChildTicket__verify {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1337,7 +1365,9 @@ textarea {
     justify-content: center;
     color: #fff;
     background-color: aqua;
-    height: 65px; }
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer; }
 
 .nextTicket {
   min-width: 30%;
@@ -1381,6 +1411,12 @@ textarea {
   background: url("../img/gif/pantalla-carga.gif") no-repeat center center;
   background-size: cover;
   z-index: 500; }
+  #loading img {
+    width: 40%;
+    margin: auto;
+    position: relative;
+    top: 28%;
+    display: none; }
 
 .remove {
   display: none; }
@@ -1560,7 +1596,8 @@ footer {
   -ms-flex-pack: center;
   justify-content: center; }
   .containerTerm--recover {
-    margin-top: 4em; }
+    margin: auto;
+    margin-bottom: 0; }
 
 .terminos {
   font-family: AlpacaScarlett;

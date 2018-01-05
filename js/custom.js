@@ -1,8 +1,16 @@
 $(document).ready(function () {
     setTimeout(function () {
         $('#loading').fadeOut();
-    }, 7000);
+    }, 5000);
+    setTimeout(function () {
+        $('#loadingBar').fadeIn(800).css('display', 'block');
+    }, 1800);
 });
+
+$('#btnJugar').click(function () {
+    $('.scoreFlecha').fadeIn(500).css('display', 'block');
+});
+
 
 $('.triviaCheck').on('change', function () {
     $('.triviaCheck').not(this).prop('checked', false);
